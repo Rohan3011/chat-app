@@ -1,9 +1,9 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}Rooms{% endblock title %}
 
 {% block content %}
-<nav class="fixed flex items-center px-8 py-2 shadow  w-full">
+<nav class="fixed flex items-center px-8 py-2  shadow w-full">
   <div class="grow">
     <a class="navbar-brand" href="#">Chat-app</a>
   </div>
@@ -16,18 +16,25 @@
     <a href="/signup" class="px-4 py-1 bg-blue-700  hover:bg-blue-600 rounded-lg text-slate-300" type="button">Sign up</a>
         <a href="/login" class="px-4 py-1 border-2 border-blue-700 hover:text-slate-300 hover:bg-blue-600 rounded-lg" type="button"> Login </a>
       {% endif %}
-      
-
-  
+        
   </div>
+</nav> 
 
-</nav>
 
-<div class="bg-neutral-700 w-screen h-screen">
-  {% block content %}
 
-  {% endblock content %}
+<div class="absolute w-full top-12 p-4">
+  <h1 class="text-5xl text-gray-900 text-center px-4 py-8">Rooms</h1>
+
+  <div class="flex flex-wrap items-center p-4 space-x-8">
+    {% for room in rooms %}
+    <div class="w-full lg:w-1/4 p-4 space-y-4 rounded-lg shadow bg-white text-center">
+        <h3 class="text-2xl"> {{room.name}} </h3>
+        <a href={% url "room" room.slug %} class="block w-full p-2 bg-blue-700 hover:bg-blue-600  text-slate-300 rounded-lg shadow "> Join</a>
+    </div>
+    
+    {% endfor %}
+
+  </div>
 </div>
-
 
 {% endblock content %}
