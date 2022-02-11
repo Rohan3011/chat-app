@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock title %}</title>
+    <title> chatapp {% block title %}{% endblock title %}</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="w-screen h-screen bg-gray-100">
-        {% block content %}{% endblock content %}
+    <div class="">
+        {% block navbar %}{% endblock navbar %}
+        {% block content %}
+        {% endblock content %}
     </div>
+
+    {% block scripts %}{% endblock %}
 
 </body>
 </html>
