@@ -5,12 +5,12 @@
 {% block navbar %}
 <nav class="fixed flex items-center px-8 py-2 shadow bg-white  w-full">
   <div class="grow">
-    <a class="font-bold text-2xl" href="#">ChatApp</a>
+    <a class="font-bold text-2xl" href="/">ChatApp</a>
   </div>
   <div class="flex space-x-4 ">
     
     {% if request.user.is_authenticated %}
-    <a href="/rooms" class="font-medium px-4 py-2 rounded-lg text-gray-900" type="button">rooms </a>
+    <a href="/rooms" class="font-semibold px-4 py-2 rounded-lg text-gray-900 hover:bg-blue-100" type="button">Rooms </a>
     <a href="/logout" class="px-4 py-2 bg-blue-700  hover:bg-blue-600 rounded-lg text-white" type="button"> Logout </a>
 
     {% else %}

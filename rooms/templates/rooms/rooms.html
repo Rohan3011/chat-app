@@ -7,14 +7,14 @@
 {% block content %}
 <div class="w-full top-12 p-4">
  
-  <h1 class="text-5xl text-gray-900 text-center px-4 py-8">
+  <h1 class="text-5xl text-gray-900 text-center py-6 mt-10">
     {% block header %}
     Rooms
     {% endblock header %}
   </h1>
-  <div class="flex flex-wrap items-center p-4 space-x-8">
+  <div class="flex flex-wrap items-center p-4 space-x-8 space-y-4 bg-blue-300">
     {% for room in rooms %}
-    <div class="w-full lg:w-1/4 p-4 space-y-4 rounded-lg shadow bg-white text-center">
+    <div class="w-full sm:w-1/2 lg:w-1/4 p-4 space-y-6 rounded-lg shadow bg-white text-center">
         <h3 class="text-2xl"> {{room.name}} </h3>
         <a href={% url "room" room.slug %} class="block w-full p-2 bg-blue-700 hover:bg-blue-600  text-white rounded-lg shadow "> Join</a>
     </div>

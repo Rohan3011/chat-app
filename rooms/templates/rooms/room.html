@@ -7,14 +7,20 @@
 
 <div class="w-full lg:w-2/4">
 
-  <div class=" m-4 p-4 lg:max-h-[450px]  rounded-lg shadow-lg space-y-4 " id="chatbox">
-    <div class="p-4 bg-gray-200 rounded-xl">
-      <p class="font-xs"> <em> {{request.user.username}}</em>, welcome to {{room.name}} </p>
-    </div>
+  <div class=" m-4 p-4 lg:max-h-[400px] overflow-y-auto  rounded-lg shadow-lg space-y-4 " id="chatbox">
+
+      {% for message in messages %}
+        <div class="p-4 bg-gray-200 rounded-xl">
+          <p class="font-semibold"> {{message.user.username}} </p>
+          <p>{{message.content}}</p>  
+        </div>
+      
+      {% endfor %}
+    
   </div>
 
 
-  <div class="m-4 p-4 rounded-lg shadow-lg mt-10" id="chat-messages">
+  <div class="bg-white  m-4 p-4 rounded-lg shadow-lg mt-10" id="chat-messages">
    <form method="post" action="." class="flex">
      {% csrf_token %}
      <input type="text" id="message-field" placeholder="Your message..." class="focus:outline-none focus:border-sky-500 focus:ring-none block w-full rounded-md focus:ring-none

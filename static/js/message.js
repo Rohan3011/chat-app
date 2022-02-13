@@ -25,6 +25,7 @@ chatSocket.onmessage = function (e) {
     html += `<p class="font-semibold">${data.username}</p>`;
     html += ` <p>${data.message}</p>  </div>`;
     chatbox.innerHTML += html;
+    scrollToBottom();
 
 }
 
@@ -63,4 +64,9 @@ send.onclick = function (e) {
     messageContent.value = "";
 
     return false;
+}
+
+
+function scrollToBottom() {
+    chatbox.scrollTop = chatbox.scrollHeight;
 }
